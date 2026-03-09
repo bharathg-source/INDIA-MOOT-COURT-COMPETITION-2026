@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30th All India Moot Court Competition 2026 | ULC Bangalore</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#16144B', 
+                            blue: '#1C195D', 
+                            gold: '#d4af37', 
+                            lightGold: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #16144B; color: #ffffff; overflow-x: hidden; }
+
+        .text-gold-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #d4af37;
+        }
+
+        .glass-card {
+            background: rgba(28, 25, 93, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.6); }
+
+        /* Hero Background with Watermark Fixed */
+        .hero-bg { background-color: #16144B; position: relative; z-index: 1; }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('image_02d77a.png'); /* Ensure this file is in your folder */
+            background-size: 40%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.20; /* Watermark visibility */
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) { .hero-bg::before { background-size: 80%; background-attachment: scroll; } }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #16144B; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+
+        .timeline-container::before {
+            content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+            width: 2px; height: 100%; background: rgba(212, 175, 55, 0.3);
+        }
+        @media (max-width: 768px) { .timeline-container::before { left: 20px; } }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-serif font-bold text-xl md:text-2xl text-gold-gradient tracking-wider">30TH AIMCC '26</a>
+            
+            <div class="hidden md:flex space-x-8 items-center text-sm font-medium tracking-wide">
+                <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
+                <a href="#timeline" class="hover:text-brand-gold transition-colors">Timeline</a>
+                <a href="#downloads" class="hover:text-brand-gold transition-colors">Documents</a>
+                <div class="flex space-x-4 border-l border-brand-gold/30 pl-8">
+                    <a href="https://www.instagram.com/societyofmooters_ulc?igsh=eDhkZ214cDQ0Y2Z0" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mooters-11938238b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded">Register</a>
+            </div>
+
+            <button class="md:hidden text-brand-gold text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-card border-t-0 flex flex-col p-4 space-y-4 text-center md:hidden">
+            <a href="#about" class="block py-2">About</a>
+            <a href="#timeline" class="block py-2">Timeline</a>
+            <div class="flex justify-center space-x-6 py-2">
+                <a href="https://www.instagram.com/societyofmooters_ulc?igsh=eDhkZ214cDQ0Y2Z0" target="_blank" class="text-brand-gold text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/society-of-mooters-11938238b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-brand-gold text-xl"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="block py-2 text-brand-gold font-bold">Register Now</a>
+        </div>
+    </nav>
+
+    <section class="hero-bg min-h-screen flex flex-col items-center justify-center pt-20 px-4 text-center">
+        <div class="max-w-5xl mx-auto reveal active">
+            <p class="font-serif tracking-[0.3em] text-brand-lightGold text-xs md:text-sm mb-4 uppercase">
+                Society of Mooters • University Law College • Bangalore University
+            </p>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-gold-gradient leading-tight">
+                30TH ALL INDIA MOOT COURT COMPETITION 2026
+            </h1>
+            <p class="text-lg md:text-2xl font-light mb-10 text-gray-300">
+                <i class="fa-regular fa-calendar text-brand-gold mr-2"></i> 29 – 31 May 2026<br>
+                <span class="text-sm md:text-base mt-2 inline-block"><i class="fa-solid fa-location-dot text-brand-gold mr-2 mt-2"></i> Jnana Bharathi Campus, Bengaluru</span>
+            </p>
+
+            <div id="countdown" class="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
+                    <span id="days" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Days</span>
+                </div>
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
+                    <span id="hours" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Hours</span>
+                </div>
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
+                    <span id="minutes" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Mins</span>
+                </div>
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
+                    <span id="seconds" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Secs</span>
+                </div>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="px-8 py-3 bg-brand-gold text-brand-dark font-bold tracking-widest uppercase text-sm hover:bg-transparent hover:text-brand-gold border border-brand-gold transition-all rounded shadow-lg">
+                <i class="fa-solid fa-file-signature mr-2"></i> Register Now
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Our Institutions</h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="glass-card p-8 rounded-xl reveal">
+                <h3 class="font-serif text-2xl text-white mb-4"><i class="fa-solid fa-university text-brand-gold mr-3"></i>Bangalore University</h3>
+                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1964, a NAAC A++ accredited institution globally recognized for legal excellence.</p>
+            </div>
+            <div class="glass-card p-8 rounded-xl reveal">
+                <h3 class="font-serif text-2xl text-white mb-4"><i class="fa-solid fa-building-columns text-brand-gold mr-3"></i>University Law College</h3>
+                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1948, ULC is a pioneer in legal education with a vibrant mooting culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="downloads" class="py-20 px-6 bg-brand-blue border-t border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Official Documents</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 reveal">
+                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full">
+                    <i class="fa-solid fa-book-bookmark text-5xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-xl text-white mb-2">Rule Book</h3>
+                    <a href="https://drive.google.com/file/d/1hZOTDiOIH4mpfxhdIdVu7IpSO3H_-Jta/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
+                </div>
+                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full border-brand-gold/50">
+                    <i class="fa-solid fa-scale-balanced text-5xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-xl text-white mb-2">Moot Proposition</h3>
+                    <a href="https://drive.google.com/file/d/1EM0wRYZi_24gvYHKegmLYBVHoqi_zh3C/view?usp=sharing" target="_blank" class="mt-auto py-2 bg-brand-gold text-brand-dark hover:bg-white transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
+                </div>
+                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full">
+                    <i class="fa-solid fa-file-pdf text-5xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-xl text-white mb-2">Brochure</h3>
+                    <a href="https://drive.google.com/file/d/1uI4tyfbHX6GOtJSsZ40JUO7E7b5moin9/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark border-t border-white/10 pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h3 class="font-serif text-2xl text-gold-gradient mb-4">30TH AIMCC 2026</h3>
+                <p class="text-gray-400 text-sm">Organised by the Society of Mooters, University Law College, Bangalore University.</p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://www.instagram.com/societyofmooters_ulc?igsh=eDhkZ214cDQ0Y2Z0" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mooters-11938238b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Contact Us</h4>
+                <a href="mailto:30thmooterssociety@gmail.com" class="text-gray-300 hover:text-brand-gold block text-sm mb-3"><i class="fa-regular fa-envelope mr-3"></i> 30thmooterssociety@gmail.com</a>
+                <p class="text-gray-300 text-sm"><i class="fa-solid fa-location-dot mr-3"></i> ULC, Jnana Bharathi Campus, Bengaluru.</p>
+            </div>
+            <div class="md:text-right">
+                <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="hover:text-brand-gold transition">Registration Form</a></li>
+                    <li><a href="#downloads" class="hover:text-brand-gold transition">Official Documents</a></li>
+                    <li><a href="#timeline" class="hover:text-brand-gold transition">Key Dates</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 text-center text-xs text-gray-500">
+            &copy; 2026 Society of Mooters, ULC Bangalore. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'shadow-lg');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('bg-brand-dark/95', 'backdrop-blur-md', 'shadow-lg');
+                nav.classList.add('bg-transparent');
+            }
+        });
+
+        const countdownDate = new Date("May 29, 2026 09:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            if (distance < 0) return;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) reveals[i].classList.add("active");
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
