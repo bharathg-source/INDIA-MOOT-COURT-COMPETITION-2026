@@ -52,18 +52,18 @@
         
         .glass-card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.6); }
 
-        /* Hero Background with Watermark Fixed */
+        /* Hero Background with Watermark */
         .hero-bg { background-color: #16144B; position: relative; z-index: 1; }
         .hero-bg::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('image_02d77a.png'); /* Ensure this file is in your folder */
+            background-image: url('image_02d77a.png'); 
             background-size: 40%;
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
-            opacity: 0.20; /* Watermark visibility */
+            opacity: 0.18; 
             z-index: -1;
         }
 
@@ -73,6 +73,7 @@
         ::-webkit-scrollbar-track { background: #16144B; }
         ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
 
+        .timeline-container { position: relative; }
         .timeline-container::before {
             content: ''; position: absolute; left: 50%; transform: translateX(-50%);
             width: 2px; height: 100%; background: rgba(212, 175, 55, 0.3);
@@ -95,9 +96,9 @@
                 <a href="#downloads" class="hover:text-brand-gold transition-colors">Documents</a>
                 <div class="flex space-x-4 border-l border-brand-gold/30 pl-8">
                     <a href="https://www.instagram.com/societyofmooters_ulc?igsh=eDhkZ214cDQ0Y2Z0" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/society-of-mooters-11938238b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mooters-11938238b" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded">Register</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="ml-4 px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded font-bold uppercase text-xs tracking-widest">Register</a>
             </div>
 
             <button class="md:hidden text-brand-gold text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
@@ -109,8 +110,8 @@
             <a href="#about" class="block py-2">About</a>
             <a href="#timeline" class="block py-2">Timeline</a>
             <div class="flex justify-center space-x-6 py-2">
-                <a href="https://www.instagram.com/societyofmooters_ulc?igsh=eDhkZ214cDQ0Y2Z0" target="_blank" class="text-brand-gold text-xl"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/society-of-mooters-11938238b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-brand-gold text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/societyofmooters_ulc" target="_blank" class="text-brand-gold text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/society-of-mooters-11938238b" target="_blank" class="text-brand-gold text-xl"><i class="fa-brands fa-linkedin"></i></a>
             </div>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="block py-2 text-brand-gold font-bold">Register Now</a>
         </div>
@@ -160,12 +161,107 @@
         </div>
         <div class="grid lg:grid-cols-2 gap-10">
             <div class="glass-card p-8 rounded-xl reveal">
-                <h3 class="font-serif text-2xl text-white mb-4"><i class="fa-solid fa-university text-brand-gold mr-3"></i>Bangalore University</h3>
-                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1964, a NAAC A++ accredited institution globally recognized for legal excellence.</p>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                        <i class="fa-solid fa-university text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white">Bangalore University</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1964, Bangalore University is a highly respected, NAAC A++ accredited institution. Nestled in the sprawling Jnana Bharathi Campus, it is recognized globally for its multidisciplinary approach and excellence in higher education.</p>
+                <ul class="text-xs text-brand-gold space-y-2">
+                    <li><i class="fa-solid fa-check mr-2"></i> Established 1964</li>
+                    <li><i class="fa-solid fa-check mr-2"></i> NAAC A++ Accredited</li>
+                </ul>
             </div>
             <div class="glass-card p-8 rounded-xl reveal">
-                <h3 class="font-serif text-2xl text-white mb-4"><i class="fa-solid fa-building-columns text-brand-gold mr-3"></i>University Law College</h3>
-                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1948, ULC is a pioneer in legal education with a vibrant mooting culture.</p>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                        <i class="fa-solid fa-building-columns text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white">University Law College</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1948, University Law College (ULC) is a pioneer in legal education in India. Renowned for its rigorous academic curriculum and vibrant mooting culture, it offers the prestigious BA LL.B program.</p>
+                <ul class="text-xs text-brand-gold space-y-2">
+                    <li><i class="fa-solid fa-check mr-2"></i> Established 1948</li>
+                    <li><i class="fa-solid fa-check mr-2"></i> Legacy of Legal Excellence</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-10 glass-card p-8 rounded-xl text-center reveal border-t-4 border-t-brand-gold">
+            <h3 class="font-serif text-2xl text-brand-gold mb-4">Society of Mooters</h3>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-4xl mx-auto">The Society of Mooters is the official moot court committee of ULC. Dedicated to fostering practical advocacy skills, the society has a rich history of organizing national-level competitions that challenge the brightest legal minds across India.</p>
+        </div>
+    </section>
+
+    <section id="timeline" class="py-20 px-6 bg-brand-blue/30 border-y border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Key Dates</h2>
+            </div>
+            <div class="timeline-container py-8 reveal">
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-8">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
+                    <div class="glass-card p-4 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0">
+                        <h4 class="font-bold text-brand-gold mb-1">13 April 2026</h4>
+                        <p class="text-sm text-gray-300">Provisional Registration Deadline</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-8">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
+                    <div class="glass-card p-4 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0 md:text-right">
+                        <h4 class="font-bold text-brand-gold mb-1">15 April 2026</h4>
+                        <p class="text-sm text-gray-300">Clarification Request Deadline</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between md:justify-normal group w-full mt-16">
+                    <div class="bg-brand-blue border-2 border-brand-gold/60 p-6 md:p-8 rounded-xl w-full text-center relative z-10 shadow-2xl">
+                        <h3 class="font-serif text-2xl text-brand-gold mb-6 uppercase tracking-widest border-b border-brand-gold/20 pb-4 inline-block">The Competition</h3>
+                        <div class="grid md:grid-cols-3 gap-6 text-sm">
+                            <div class="bg-brand-dark p-5 rounded-lg border border-brand-gold/20">
+                                <strong class="text-white block mb-2 text-lg">29 May 2026</strong>
+                                <span class="text-gray-400 leading-relaxed">Inauguration & Researcher's Test</span>
+                            </div>
+                            <div class="bg-brand-dark p-5 rounded-lg border border-brand-gold/20">
+                                <strong class="text-white block mb-2 text-lg">30 May 2026</strong>
+                                <span class="text-gray-400 leading-relaxed">Preliminary Rounds</span>
+                            </div>
+                            <div class="bg-brand-dark p-5 rounded-lg border border-brand-gold/20">
+                                <strong class="text-white block mb-2 text-lg">31 May 2026</strong>
+                                <span class="text-gray-400 leading-relaxed">Quarter, Semi & Finals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Honours & Awards</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 reveal">
+            <div class="glass-card p-6 rounded-xl text-center flex flex-col items-center">
+                <i class="fa-solid fa-trophy text-4xl text-brand-gold mb-4"></i>
+                <h4 class="font-bold text-white text-sm uppercase">Winning Team</h4>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center flex flex-col items-center">
+                <i class="fa-solid fa-medal text-4xl text-gray-300 mb-4"></i>
+                <h4 class="font-bold text-white text-sm uppercase">Runner Up</h4>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center flex flex-col items-center">
+                <i class="fa-solid fa-file-pen text-4xl text-brand-gold mb-4"></i>
+                <h4 class="font-bold text-white text-sm uppercase">Best Memorial</h4>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center flex flex-col items-center">
+                <i class="fa-solid fa-magnifying-glass-chart text-4xl text-brand-gold mb-4"></i>
+                <h4 class="font-bold text-white text-sm uppercase">Best Researcher</h4>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center flex flex-col items-center col-span-2 md:col-span-1">
+                <i class="fa-solid fa-microphone text-4xl text-brand-gold mb-4"></i>
+                <h4 class="font-bold text-white text-sm uppercase">Best Speaker</h4>
             </div>
         </div>
     </section>
@@ -181,14 +277,15 @@
                     <h3 class="font-serif text-xl text-white mb-2">Rule Book</h3>
                     <a href="https://drive.google.com/file/d/1hZOTDiOIH4mpfxhdIdVu7IpSO3H_-Jta/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
                 </div>
-                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full border-brand-gold/50">
+                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full border-brand-gold/50 shadow-lg shadow-brand-gold/10">
+                    <div class="absolute top-0 right-0 bg-brand-gold text-brand-dark text-[10px] font-bold px-3 py-1 rounded-bl-lg">NEW</div>
                     <i class="fa-solid fa-scale-balanced text-5xl text-brand-gold mb-6"></i>
                     <h3 class="font-serif text-xl text-white mb-2">Moot Proposition</h3>
                     <a href="https://drive.google.com/file/d/1EM0wRYZi_24gvYHKegmLYBVHoqi_zh3C/view?usp=sharing" target="_blank" class="mt-auto py-2 bg-brand-gold text-brand-dark hover:bg-white transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
                 </div>
                 <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full">
                     <i class="fa-solid fa-file-pdf text-5xl text-brand-gold mb-6"></i>
-                    <h3 class="font-serif text-xl text-white mb-2">Brochure</h3>
+                    <h3 class="font-serif text-xl text-white mb-2">Event Brochure</h3>
                     <a href="https://drive.google.com/file/d/1uI4tyfbHX6GOtJSsZ40JUO7E7b5moin9/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
                 </div>
             </div>
@@ -199,28 +296,37 @@
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 mb-12">
             <div>
                 <h3 class="font-serif text-2xl text-gold-gradient mb-4">30TH AIMCC 2026</h3>
-                <p class="text-gray-400 text-sm">Organised by the Society of Mooters, University Law College, Bangalore University.</p>
-                <div class="flex space-x-4 mt-6">
-                    <a href="https://www.instagram.com/societyofmooters_ulc?igsh=eDhkZ214cDQ0Y2Z0" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/society-of-mooters-11938238b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-linkedin"></i></a>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Organised by the Society of Mooters, University Law College, Bangalore University.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/societyofmooters_ulc" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/society-of-mooters-11938238b" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
             <div>
                 <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Contact Us</h4>
                 <a href="mailto:30thmooterssociety@gmail.com" class="text-gray-300 hover:text-brand-gold block text-sm mb-3"><i class="fa-regular fa-envelope mr-3"></i> 30thmooterssociety@gmail.com</a>
-                <p class="text-gray-300 text-sm"><i class="fa-solid fa-location-dot mr-3"></i> ULC, Jnana Bharathi Campus, Bengaluru.</p>
+                <p class="text-gray-300 text-sm mb-1"><i class="fa-solid fa-location-dot mr-3"></i> Jnana Bharathi Campus, Bengaluru.</p>
             </div>
             <div class="md:text-right">
                 <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Quick Links</h4>
                 <ul class="space-y-2 text-sm text-gray-300">
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="hover:text-brand-gold transition">Registration Form</a></li>
-                    <li><a href="#downloads" class="hover:text-brand-gold transition">Official Documents</a></li>
+                    <li><a href="#downloads" class="hover:text-brand-gold transition">Documents</a></li>
                     <li><a href="#timeline" class="hover:text-brand-gold transition">Key Dates</a></li>
                 </ul>
             </div>
         </div>
+
+        <div class="max-w-5xl mx-auto border-t border-white/5 pt-10 pb-6 mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div><span class="text-brand-gold text-[10px] uppercase block mb-1">President</span><span class="text-white font-bold text-sm">Yashwanth D</span></div>
+                <div><span class="text-brand-gold text-[10px] uppercase block mb-1">General Secretary</span><span class="text-white font-bold text-sm">Hajeera Naseem</span></div>
+                <div><span class="text-brand-gold text-[10px] uppercase block mb-1">Treasurer</span><span class="text-white font-bold text-sm">Nithin SR</span></div>
+            </div>
+        </div>
+
         <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 text-center text-xs text-gray-500">
-            &copy; 2026 Society of Mooters, ULC Bangalore. All Rights Reserved.
+            &copy; 2026 Society of Mooters, ULC Bangalore.
         </div>
     </footer>
 
@@ -260,3 +366,4 @@
     </script>
 </body>
 </html>
+
