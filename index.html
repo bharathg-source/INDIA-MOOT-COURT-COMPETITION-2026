@@ -84,7 +84,6 @@
             content: ''; position: absolute; left: 50%; transform: translateX(-50%);
             width: 2px; height: 100%; background: rgba(212, 175, 55, 0.3);
         }
-        @media (max-width: 768px) { .timeline-container::before { left: 20px; } }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -307,7 +306,15 @@
     </section>
 
     <footer class="bg-brand-dark border-t border-white/10 pt-16 pb-8 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 mb-12">
+        <div class="max-w-5xl mx-auto pb-10 text-center text-xs text-gray-500 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">President</span><span class="text-white font-bold uppercase tracking-wide text-sm">Yashwanth D</span></div>
+                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">General Secretary</span><span class="text-white font-bold uppercase tracking-wide text-sm">Hajeera Naseem</span></div>
+                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">Treasurer</span><span class="text-white font-bold uppercase tracking-wide text-sm">Nithin SR</span></div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-white/5 pt-12 grid md:grid-cols-3 gap-10 mb-12 reveal">
             <div>
                 <h3 class="font-serif text-2xl text-gold-gradient mb-4 uppercase tracking-widest">30ᵗʰ AIMCC 2026</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">Organised by the Society of Mooters, University Law College & Department of Studies in Law, Bangalore University.</p>
@@ -318,25 +325,20 @@
             </div>
             <div>
                 <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Contact Us</h4>
-                <a href="mailto:30thmooterssociety@gmail.com" class="text-gray-300 block text-sm mb-3"><i class="fa-regular fa-envelope mr-3 text-brand-gold"></i> 30thmooterssociety@gmail.com</a>
-                <p class="text-gray-300 text-sm"><i class="fa-solid fa-location-dot mr-3 text-brand-gold"></i> Jnana Bharathi Campus, Bengaluru.</p>
+                <a href="mailto:30thmooterssociety@gmail.com" class="text-gray-300 block text-sm mb-3 hover:text-brand-gold transition-colors"><i class="fa-regular fa-envelope mr-3 text-brand-gold text-lg"></i> 30thmooterssociety@gmail.com</a>
+                <p class="text-gray-300 text-sm"><i class="fa-solid fa-location-dot mr-3 text-brand-gold text-lg"></i> Jnana Bharathi Campus, Bengaluru.</p>
             </div>
             <div class="md:text-right">
                 <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Quick Links</h4>
                 <ul class="space-y-2 text-sm text-gray-300">
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="hover:text-brand-gold transition">Registration Form</a></li>
-                    <li><a href="#downloads" class="hover:text-brand-gold transition">Official Documents</a></li>
-                    <li><a href="#timeline" class="hover:text-brand-gold transition">Key Dates</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="hover:text-brand-gold transition-colors">Registration Form</a></li>
+                    <li><a href="#downloads" class="hover:text-brand-gold transition-colors">Official Documents</a></li>
+                    <li><a href="#timeline" class="hover:text-brand-gold transition-colors">Key Dates</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="max-w-5xl mx-auto border-t border-white/5 pt-10 text-center text-xs text-gray-500">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">President</span><span class="text-white font-bold uppercase tracking-wide">Yashwanth D</span></div>
-                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">General Secretary</span><span class="text-white font-bold uppercase tracking-wide">Hajeera Naseem</span></div>
-                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">Treasurer</span><span class="text-white font-bold uppercase tracking-wide">Nithin SR</span></div>
-            </div>
+        <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 text-center text-xs text-gray-500 uppercase tracking-widest">
             &copy; 2026 Society of Mooters, ULC Bangalore.
         </div>
     </footer>
