@@ -52,6 +52,15 @@
         
         .glass-card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.6); }
 
+        /* Countdown Card Style */
+        .countdown-card {
+            background: #1C195D;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            min-width: 100px;
+        }
+
         /* Hero Background with Watermark */
         .hero-bg { background-color: #16144B; position: relative; z-index: 1; }
         .hero-bg::before {
@@ -67,11 +76,10 @@
             z-index: -1;
         }
 
-        @media (max-width: 768px) { .hero-bg::before { background-size: 80%; background-attachment: scroll; } }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #16144B; }
-        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        @media (max-width: 768px) { 
+            .hero-bg::before { background-size: 80%; background-attachment: scroll; }
+            .countdown-card { min-width: 80px; }
+        }
 
         .timeline-container { position: relative; }
         .timeline-container::before {
@@ -88,14 +96,14 @@
 
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="font-serif font-bold text-xl md:text-2xl text-gold-gradient tracking-wider">30TH AIMCC '26</a>
+            <a href="#" class="font-serif font-bold text-xl md:text-2xl text-gold-gradient tracking-wider uppercase">30TH AIMCC '26</a>
             
             <div class="hidden md:flex space-x-8 items-center text-sm font-medium tracking-wide">
                 <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
                 <a href="#timeline" class="hover:text-brand-gold transition-colors">Timeline</a>
                 <a href="#downloads" class="hover:text-brand-gold transition-colors">Documents</a>
                 <div class="flex space-x-4 border-l border-brand-gold/30 pl-8">
-                    <a href="https://www.instagram.com/societyofmooters_ulc?igsh=eDhkZ214cDQ0Y2Z0" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/societyofmooters_ulc" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/society-of-mooters-11938238b" target="_blank" class="text-brand-gold hover:text-white transition-all text-lg"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="ml-4 px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded font-bold uppercase text-xs tracking-widest">Register</a>
@@ -105,7 +113,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
-
+        
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-card border-t-0 flex flex-col p-4 space-y-4 text-center md:hidden">
             <a href="#about" class="block py-2">About</a>
             <a href="#timeline" class="block py-2">Timeline</a>
@@ -117,35 +125,34 @@
         </div>
     </nav>
 
-    <section class="hero-bg min-h-screen flex flex-col items-center justify-center pt-20 px-4 text-center">
-        <div class="max-w-5xl mx-auto reveal active">
-            <p class="font-serif tracking-[0.3em] text-brand-lightGold text-xs md:text-sm mb-4 uppercase">
-                Society of Mooters • University Law College • Bangalore University
+    <section class="hero-bg min-h-screen flex flex-col items-center justify-center pt-20 px-4 text-center relative overflow-hidden">
+        <div class="max-w-5xl mx-auto z-10 reveal active relative">
+            <p class="font-serif tracking-[0.2em] text-brand-lightGold text-xs md:text-sm mb-4 uppercase">
+                University Law College and Department of Studies in Law
             </p>
+            
             <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-gold-gradient leading-tight">
                 30TH ALL INDIA MOOT COURT COMPETITION 2026
             </h1>
-            <p class="text-lg md:text-2xl font-light mb-10 text-gray-300">
-                <i class="fa-regular fa-calendar text-brand-gold mr-2"></i> 29 – 31 May 2026<br>
-                <span class="text-sm md:text-base mt-2 inline-block"><i class="fa-solid fa-location-dot text-brand-gold mr-2 mt-2"></i> Jnana Bharathi Campus, Bengaluru</span>
-            </p>
+            
+            <p class="text-sm font-serif tracking-[0.2em] text-brand-gold mb-6 uppercase">Event Begins In</p>
 
-            <div id="countdown" class="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
-                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
-                    <span id="days" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
-                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Days</span>
+            <div id="countdown" class="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
+                <div class="countdown-card p-6">
+                    <span id="days" class="font-serif text-4xl md:text-6xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 block">Days</span>
                 </div>
-                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
-                    <span id="hours" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
-                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Hours</span>
+                <div class="countdown-card p-6">
+                    <span id="hours" class="font-serif text-4xl md:text-6xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 block">Hours</span>
                 </div>
-                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
-                    <span id="minutes" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
-                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Mins</span>
+                <div class="countdown-card p-6">
+                    <span id="minutes" class="font-serif text-4xl md:text-6xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 block">Mins</span>
                 </div>
-                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] rounded-lg">
-                    <span id="seconds" class="font-serif text-3xl md:text-5xl text-brand-gold block">00</span>
-                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-1 block">Secs</span>
+                <div class="countdown-card p-6">
+                    <span id="seconds" class="font-serif text-4xl md:text-6xl text-brand-gold block">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 block">Secs</span>
                 </div>
             </div>
 
@@ -157,62 +164,76 @@
 
     <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16 reveal">
-            <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Our Institutions</h2>
+            <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2 uppercase">Our Institutions</h2>
         </div>
         <div class="grid lg:grid-cols-2 gap-10">
             <div class="glass-card p-8 rounded-xl reveal">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
-                        <i class="fa-solid fa-university text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white">Bangalore University</h3>
-                </div>
-                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1964, Bangalore University is a highly respected, NAAC A++ accredited institution. Nestled in the sprawling Jnana Bharathi Campus, it is recognized globally for its multidisciplinary approach and excellence in higher education.</p>
-                <ul class="text-xs text-brand-gold space-y-2">
-                    <li><i class="fa-solid fa-check mr-2"></i> Established 1964</li>
-                    <li><i class="fa-solid fa-check mr-2"></i> NAAC A++ Accredited</li>
-                </ul>
+                <h3 class="font-serif text-2xl text-white mb-4"><i class="fa-solid fa-university text-brand-gold mr-3"></i>Bangalore University</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">Established in 1964, a NAAC A++ accredited institution recognized globally for its multidisciplinary approach and excellence in higher education.</p>
             </div>
             <div class="glass-card p-8 rounded-xl reveal">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
-                        <i class="fa-solid fa-building-columns text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white">University Law College</h3>
-                </div>
-                <p class="text-gray-300 text-sm leading-relaxed mb-4">Established in 1948, University Law College (ULC) is a pioneer in legal education in India. Renowned for its rigorous academic curriculum and vibrant mooting culture, it offers the prestigious BA LL.B program.</p>
-                <ul class="text-xs text-brand-gold space-y-2">
-                    <li><i class="fa-solid fa-check mr-2"></i> Established 1948</li>
-                    <li><i class="fa-solid fa-check mr-2"></i> Legacy of Legal Excellence</li>
-                </ul>
+                <h3 class="font-serif text-2xl text-white mb-4"><i class="fa-solid fa-building-columns text-brand-gold mr-3"></i>University Law College</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">Established in 1948, University Law College (ULC) is a pioneer in legal education, known for its rigorous curriculum and mooting culture.</p>
             </div>
         </div>
         <div class="mt-10 glass-card p-8 rounded-xl text-center reveal border-t-4 border-t-brand-gold">
             <h3 class="font-serif text-2xl text-brand-gold mb-4">Society of Mooters</h3>
-            <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-4xl mx-auto">The Society of Mooters is the official moot court committee of ULC. Dedicated to fostering practical advocacy skills, the society has a rich history of organizing national-level competitions that challenge the brightest legal minds across India.</p>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-4xl mx-auto">The official moot court committee of ULC, dedicated to fostering practical advocacy skills and organizing premier national level competitions.</p>
         </div>
     </section>
 
     <section id="timeline" class="py-20 px-6 bg-brand-blue/30 border-y border-white/5">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Key Dates</h2>
+                <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2 uppercase">Key Dates</h2>
             </div>
             <div class="timeline-container py-8 reveal">
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-8">
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-12">
                     <div class="hidden md:block w-5/12"></div>
                     <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
-                    <div class="glass-card p-4 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0">
-                        <h4 class="font-bold text-brand-gold mb-1">13 April 2026</h4>
+                    <div class="glass-card p-5 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0">
+                        <h4 class="font-bold text-brand-gold mb-1 text-lg">13 April 2026</h4>
                         <p class="text-sm text-gray-300">Provisional Registration Deadline</p>
                     </div>
                 </div>
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-8">
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-12">
                     <div class="hidden md:block w-5/12"></div>
                     <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
-                    <div class="glass-card p-4 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0 md:text-right">
-                        <h4 class="font-bold text-brand-gold mb-1">15 April 2026</h4>
+                    <div class="glass-card p-5 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0 md:text-right">
+                        <h4 class="font-bold text-brand-gold mb-1 text-lg">15 April 2026</h4>
                         <p class="text-sm text-gray-300">Clarification Request Deadline</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-12">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
+                    <div class="glass-card p-5 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0">
+                        <h4 class="font-bold text-brand-gold mb-1 text-lg">18 April 2026</h4>
+                        <p class="text-sm text-gray-300">Clarifications Released</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-12">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
+                    <div class="glass-card p-5 border-brand-gold/50 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0 md:text-right">
+                        <h4 class="font-bold text-brand-gold mb-1 text-lg">03 May 2026</h4>
+                        <p class="text-sm text-white font-semibold">Memorial Submission Deadline (Soft Copy)</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-12">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
+                    <div class="glass-card p-5 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0">
+                        <h4 class="font-bold text-brand-gold mb-1 text-lg">07 May 2026</h4>
+                        <p class="text-sm text-gray-300">Qualified Teams Announced</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group w-full mb-12">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 flex items-center bg-brand-gold w-6 h-6 rounded-full border-4 border-brand-dark absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2"></div>
+                    <div class="glass-card p-5 rounded-lg w-[calc(100%-40px)] md:w-5/12 ml-[40px] md:ml-0 md:text-right">
+                        <h4 class="font-bold text-brand-gold mb-1 text-lg">11 May 2026</h4>
+                        <p class="text-sm text-gray-300">Final Registration Deadline</p>
                     </div>
                 </div>
                 <div class="relative flex items-center justify-between md:justify-normal group w-full mt-16">
@@ -220,16 +241,16 @@
                         <h3 class="font-serif text-2xl text-brand-gold mb-6 uppercase tracking-widest border-b border-brand-gold/20 pb-4 inline-block">The Competition</h3>
                         <div class="grid md:grid-cols-3 gap-6 text-sm">
                             <div class="bg-brand-dark p-5 rounded-lg border border-brand-gold/20">
-                                <strong class="text-white block mb-2 text-lg">29 May 2026</strong>
-                                <span class="text-gray-400 leading-relaxed">Inauguration & Researcher's Test</span>
+                                <strong class="text-white block mb-2 text-lg uppercase">29 May 2026</strong>
+                                <span class="text-gray-400">Inauguration & Researcher's Test</span>
                             </div>
                             <div class="bg-brand-dark p-5 rounded-lg border border-brand-gold/20">
-                                <strong class="text-white block mb-2 text-lg">30 May 2026</strong>
-                                <span class="text-gray-400 leading-relaxed">Preliminary Rounds</span>
+                                <strong class="text-white block mb-2 text-lg uppercase">30 May 2026</strong>
+                                <span class="text-gray-400">Preliminary Rounds</span>
                             </div>
                             <div class="bg-brand-dark p-5 rounded-lg border border-brand-gold/20">
-                                <strong class="text-white block mb-2 text-lg">31 May 2026</strong>
-                                <span class="text-gray-400 leading-relaxed">Quarter, Semi & Finals</span>
+                                <strong class="text-white block mb-2 text-lg uppercase">31 May 2026</strong>
+                                <span class="text-gray-400">Quarter, Semi & Finals</span>
                             </div>
                         </div>
                     </div>
@@ -240,7 +261,7 @@
 
     <section id="awards" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16 reveal">
-            <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Honours & Awards</h2>
+            <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2 uppercase">Honours & Awards</h2>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 reveal">
             <div class="glass-card p-6 rounded-xl text-center flex flex-col items-center">
@@ -266,28 +287,23 @@
         </div>
     </section>
 
-    <section id="downloads" class="py-20 px-6 bg-brand-blue border-t border-white/5">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2">Official Documents</h2>
+    <section id="downloads" class="py-20 px-6 bg-brand-blue border-t border-white/5 text-center">
+        <h2 class="font-serif text-3xl md:text-4xl text-gold-gradient inline-block border-b-2 border-brand-gold pb-2 mb-16 uppercase">Official Documents</h2>
+        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center reveal">
+            <div class="glass-card p-8 rounded-xl flex flex-col h-full">
+                <i class="fa-solid fa-book-bookmark text-5xl text-brand-gold mb-6"></i>
+                <h3 class="font-serif text-xl text-white mb-4 uppercase">Rule Book</h3>
+                <a href="https://drive.google.com/file/d/1hZOTDiOIH4mpfxhdIdVu7IpSO3H_-Jta/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded font-bold uppercase tracking-widest text-xs">Download PDF</a>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 reveal">
-                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full">
-                    <i class="fa-solid fa-book-bookmark text-5xl text-brand-gold mb-6"></i>
-                    <h3 class="font-serif text-xl text-white mb-2">Rule Book</h3>
-                    <a href="https://drive.google.com/file/d/1hZOTDiOIH4mpfxhdIdVu7IpSO3H_-Jta/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
-                </div>
-                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full border-brand-gold/50 shadow-lg shadow-brand-gold/10">
-                    <div class="absolute top-0 right-0 bg-brand-gold text-brand-dark text-[10px] font-bold px-3 py-1 rounded-bl-lg">NEW</div>
-                    <i class="fa-solid fa-scale-balanced text-5xl text-brand-gold mb-6"></i>
-                    <h3 class="font-serif text-xl text-white mb-2">Moot Proposition</h3>
-                    <a href="https://drive.google.com/file/d/1EM0wRYZi_24gvYHKegmLYBVHoqi_zh3C/view?usp=sharing" target="_blank" class="mt-auto py-2 bg-brand-gold text-brand-dark hover:bg-white transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
-                </div>
-                <div class="glass-card p-8 rounded-xl text-center flex flex-col h-full">
-                    <i class="fa-solid fa-file-pdf text-5xl text-brand-gold mb-6"></i>
-                    <h3 class="font-serif text-xl text-white mb-2">Event Brochure</h3>
-                    <a href="https://drive.google.com/file/d/1uI4tyfbHX6GOtJSsZ40JUO7E7b5moin9/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors rounded text-sm font-bold uppercase">Download PDF</a>
-                </div>
+            <div class="glass-card p-8 rounded-xl flex flex-col h-full border-brand-gold">
+                <i class="fa-solid fa-scale-balanced text-5xl text-brand-gold mb-6"></i>
+                <h3 class="font-serif text-xl text-white mb-4 uppercase">Moot Proposition</h3>
+                <a href="https://drive.google.com/file/d/1EM0wRYZi_24gvYHKegmLYBVHoqi_zh3C/view?usp=sharing" target="_blank" class="mt-auto py-2 bg-brand-gold text-brand-dark hover:bg-white transition-all rounded font-bold uppercase tracking-widest text-xs">Download PDF</a>
+            </div>
+            <div class="glass-card p-8 rounded-xl flex flex-col h-full">
+                <i class="fa-solid fa-file-pdf text-5xl text-brand-gold mb-6"></i>
+                <h3 class="font-serif text-xl text-white mb-4 uppercase">Event Brochure</h3>
+                <a href="https://drive.google.com/file/d/1uI4tyfbHX6GOtJSsZ40JUO7E7b5moin9/view?usp=sharing" target="_blank" class="mt-auto py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded font-bold uppercase tracking-widest text-xs">Download PDF</a>
             </div>
         </div>
     </section>
@@ -295,37 +311,33 @@
     <footer class="bg-brand-dark border-t border-white/10 pt-16 pb-8 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 mb-12">
             <div>
-                <h3 class="font-serif text-2xl text-gold-gradient mb-4">30TH AIMCC 2026</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">Organised by the Society of Mooters, University Law College, Bangalore University.</p>
-                <div class="flex space-x-4">
+                <h3 class="font-serif text-2xl text-gold-gradient mb-4 uppercase tracking-widest">30TH AIMCC 2026</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Organised by the Society of Mooters, University Law College & Department of Studies in Law, Bangalore University.</p>
+                <div class="flex space-x-4 mt-6">
                     <a href="https://www.instagram.com/societyofmooters_ulc" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/society-of-mooters-11938238b" target="_blank" class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
             <div>
                 <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Contact Us</h4>
-                <a href="mailto:30thmooterssociety@gmail.com" class="text-gray-300 hover:text-brand-gold block text-sm mb-3"><i class="fa-regular fa-envelope mr-3"></i> 30thmooterssociety@gmail.com</a>
-                <p class="text-gray-300 text-sm mb-1"><i class="fa-solid fa-location-dot mr-3"></i> Jnana Bharathi Campus, Bengaluru.</p>
+                <a href="mailto:30thmooterssociety@gmail.com" class="text-gray-300 block text-sm mb-3"><i class="fa-regular fa-envelope mr-3 text-brand-gold"></i> 30thmooterssociety@gmail.com</a>
+                <p class="text-gray-300 text-sm"><i class="fa-solid fa-location-dot mr-3 text-brand-gold"></i> Jnana Bharathi Campus, Bengaluru.</p>
             </div>
             <div class="md:text-right">
                 <h4 class="font-serif text-brand-gold text-lg mb-4 tracking-widest uppercase">Quick Links</h4>
                 <ul class="space-y-2 text-sm text-gray-300">
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="hover:text-brand-gold transition">Registration Form</a></li>
-                    <li><a href="#downloads" class="hover:text-brand-gold transition">Documents</a></li>
-                    <li><a href="#timeline" class="hover:text-brand-gold transition">Key Dates</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfIWyNUnJYExiqsABxbTsqszLoYk-uNiGC-ib0do0TVtI2fvw/viewform" target="_blank" class="hover:text-brand-gold">Registration Form</a></li>
+                    <li><a href="#downloads" class="hover:text-brand-gold">Official Documents</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="max-w-5xl mx-auto border-t border-white/5 pt-10 pb-6 mb-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div><span class="text-brand-gold text-[10px] uppercase block mb-1">President</span><span class="text-white font-bold text-sm">Yashwanth D</span></div>
-                <div><span class="text-brand-gold text-[10px] uppercase block mb-1">General Secretary</span><span class="text-white font-bold text-sm">Hajeera Naseem</span></div>
-                <div><span class="text-brand-gold text-[10px] uppercase block mb-1">Treasurer</span><span class="text-white font-bold text-sm">Nithin SR</span></div>
+        <div class="max-w-5xl mx-auto border-t border-white/5 pt-10 text-center text-xs text-gray-500">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">President</span><span class="text-white font-bold uppercase">Yashwanth D</span></div>
+                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">General Secretary</span><span class="text-white font-bold uppercase">Hajeera Naseem</span></div>
+                <div><span class="text-brand-gold block uppercase mb-1 tracking-widest">Treasurer</span><span class="text-white font-bold uppercase">Nithin SR</span></div>
             </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 text-center text-xs text-gray-500">
             &copy; 2026 Society of Mooters, ULC Bangalore.
         </div>
     </footer>
